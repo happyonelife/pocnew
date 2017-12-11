@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="main" name="main" tns:packageName="com.sinosoft.processrule" >
+
+    <!-- nodes -->
+    <startEvent id="_jbpm-unique-1" name="Start"  isInterrupting="false">
+    </startEvent>
+    <endEvent id="_jbpm-unique-2" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <callActivity id="_jbpm-unique-3" name="车辆管理" calledElement="processRuleCarManagement" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <scriptTask id="_jbpm-unique-5" name="日志" scriptFormat="http://www.java.com/java" >
+      <script>System.out.println("车辆管理");</script>
+    </scriptTask>
+    <callActivity id="_jbpm-unique-0" name="风险" calledElement="riskprocess" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </callActivity>
+    <scriptTask id="_jbpm-unique-6" name="风险" scriptFormat="http://www.java.com/java" >
+      <script>System.out.println("风险创建");</script>
+    </scriptTask>
+
+    <!-- connections -->
+    <sequenceFlow id="_jbpm-unique-6-_jbpm-unique-2" sourceRef="_jbpm-unique-6" targetRef="_jbpm-unique-2" />
+    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-3" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-3" />
+    <sequenceFlow id="_jbpm-unique-3-_jbpm-unique-5" sourceRef="_jbpm-unique-3" targetRef="_jbpm-unique-5" />
+    <sequenceFlow id="_jbpm-unique-5-_jbpm-unique-0" sourceRef="_jbpm-unique-5" targetRef="_jbpm-unique-0" />
+    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-6" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-6" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="main" >
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-1" >
+        <dc:Bounds x="323" y="44" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-2" >
+        <dc:Bounds x="327" y="548" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
+        <dc:Bounds x="292" y="136" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-5" >
+        <dc:Bounds x="307" y="247" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
+        <dc:Bounds x="291" y="346" width="110" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-6" >
+        <dc:Bounds x="306" y="460" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-6-_jbpm-unique-2" >
+        <di:waypoint x="346" y="484" />
+        <di:waypoint x="351" y="572" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-3" >
+        <di:waypoint x="347" y="68" />
+        <di:waypoint x="347" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-3-_jbpm-unique-5" >
+        <di:waypoint x="347" y="160" />
+        <di:waypoint x="347" y="271" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-5-_jbpm-unique-0" >
+        <di:waypoint x="347" y="271" />
+        <di:waypoint x="346" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-6" >
+        <di:waypoint x="346" y="370" />
+        <di:waypoint x="346" y="484" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions id="Definition"
+             targetNamespace="http://www.jboss.org/drools"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             xmlns:g="http://www.jboss.org/drools/flow/gpd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+  <process processType="Private" isExecutable="true" id="processRulePersonHurtManagementOfPersonInvestigate" name="processRulePersonHurtManagementOfPersonInvestigate" tns:packageName="com.sinosoft.processrule" >
+
+    <!-- nodes -->
+    <startEvent id="_jbpm-unique-15" name="Start"  isInterrupting="false">
+    </startEvent>
+    <businessRuleTask id="_jbpm-unique-16" name="人伤首调审核最低审核级别" g:ruleFlowGroup="processRuleAuditLevel" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+    <businessRuleTask id="_jbpm-unique-17" name="人伤首调审核任务初始值" g:ruleFlowGroup="processRuleAuditLevelTaskType" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+    <businessRuleTask id="_jbpm-unique-18" name="人伤首调" g:ruleFlowGroup="processRulePersonHurtManagementOfPersonInvestigate" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+    <endEvent id="_jbpm-unique-19" name="End" >
+        <terminateEventDefinition />
+    </endEvent>
+    <businessRuleTask id="_jbpm-unique-0" name="人伤首调审核任务是否自动完成" g:ruleFlowGroup="processsRulePersonHurtManagementOfPersonInvestigateIsAutoComplete" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+
+    <!-- connections -->
+    <sequenceFlow id="_jbpm-unique-15-_jbpm-unique-16" sourceRef="_jbpm-unique-15" targetRef="_jbpm-unique-16" />
+    <sequenceFlow id="_jbpm-unique-16-_jbpm-unique-17" sourceRef="_jbpm-unique-16" targetRef="_jbpm-unique-17" />
+    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-18" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-18" />
+    <sequenceFlow id="_jbpm-unique-18-_jbpm-unique-19" sourceRef="_jbpm-unique-18" targetRef="_jbpm-unique-19" />
+    <sequenceFlow id="_jbpm-unique-17-_jbpm-unique-0" sourceRef="_jbpm-unique-17" targetRef="_jbpm-unique-0" />
+
+  </process>
+
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="processRulePersonHurtManagementOfPersonInvestigate" >
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-15" >
+        <dc:Bounds x="312" y="20" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-16" >
+        <dc:Bounds x="232" y="86" width="209" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-17" >
+        <dc:Bounds x="235" y="158" width="208" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-18" >
+        <dc:Bounds x="233" y="323" width="211" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-19" >
+        <dc:Bounds x="316" y="426" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
+        <dc:Bounds x="206" y="240" width="255" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-15-_jbpm-unique-16" >
+        <di:waypoint x="336" y="44" />
+        <di:waypoint x="336" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-16-_jbpm-unique-17" >
+        <di:waypoint x="336" y="110" />
+        <di:waypoint x="339" y="182" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-18" >
+        <di:waypoint x="333" y="264" />
+        <di:waypoint x="338" y="347" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-18-_jbpm-unique-19" >
+        <di:waypoint x="338" y="347" />
+        <di:waypoint x="340" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-17-_jbpm-unique-0" >
+        <di:waypoint x="339" y="182" />
+        <di:waypoint x="333" y="264" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>
