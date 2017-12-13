@@ -78,26 +78,24 @@
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-8-_jbpm-unique-9" sourceRef="_jbpm-unique-8" targetRef="_jbpm-unique-9" name="constraint" tns:priority="1" >
       <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.taskCatalog.equals("CarLossVerify") &amp;&amp; 
-!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3");</conditionExpression>
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3") &amp;&amp;
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("4");</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-8-_jbpm-unique-10" sourceRef="_jbpm-unique-8" targetRef="_jbpm-unique-10" name="constraint" tns:priority="1" >
       <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.taskCatalog.equals("CarLossApproval") &amp;&amp;
-!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3");</conditionExpression>
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3") &amp;&amp;
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("4");</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-8-_jbpm-unique-11" sourceRef="_jbpm-unique-8" targetRef="_jbpm-unique-11" name="constraint" tns:priority="1" >
       <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.taskCatalog.equals("Check") &amp;&amp;
-!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3");</conditionExpression>
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3") &amp;&amp;
+!ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("4");</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-10-_jbpm-unique-12" sourceRef="_jbpm-unique-10" targetRef="_jbpm-unique-12" />
     <sequenceFlow id="_jbpm-unique-11-_jbpm-unique-12" sourceRef="_jbpm-unique-11" targetRef="_jbpm-unique-12" />
     <sequenceFlow id="_jbpm-unique-9-_jbpm-unique-12" sourceRef="_jbpm-unique-9" targetRef="_jbpm-unique-12" />
-    <sequenceFlow id="_jbpm-unique-8-_jbpm-unique-12" sourceRef="_jbpm-unique-8" targetRef="_jbpm-unique-12" name="constraint" tns:priority="1" >
-      <conditionExpression xsi:type="tFormalExpression" >return !(ruleXOMHelper.inPutXom.taskCatalog.equals("CarLossVerify") ||
-ruleXOMHelper.inPutXom.taskCatalog.equals("CarLossApproval") ||
-ruleXOMHelper.inPutXom.taskCatalog.equals("Check")||
-(ruleXOMHelper.inPutXom.ruleInputCommon.isAnyPayCase.equals("Y") &amp;&amp;
-ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("3")));
-</conditionExpression>
+    <sequenceFlow id="_jbpm-unique-8-_jbpm-unique-12" sourceRef="_jbpm-unique-8" targetRef="_jbpm-unique-12" name="constraint" tns:priority="4" >
+      <conditionExpression xsi:type="tFormalExpression" >return true;</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-14-_jbpm-unique-12" sourceRef="_jbpm-unique-14" targetRef="_jbpm-unique-12" name="是否预热" tns:priority="1" >
       <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.isWarmUp=="Y";</conditionExpression>
